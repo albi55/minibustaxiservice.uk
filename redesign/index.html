@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minibus Taxi Service | Executive Airport Transfers in the Cotswolds</title>
+<meta name="description" content="Fixed-price executive airport transfers from Chipping Norton, Oxford and the Cotswolds to Heathrow, Gatwick, Birmingham and beyond. Mercedes E-Class, S-Class and 8-seat V-Class. Available 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Design tokens — black + gold, per generated design system
+   ============================================================ */
+:root{
+  --ink:#0C0A09; --ink-800:#1C1917; --ink-700:#292524; --ink-600:#44403C;
+  --stone-400:#A8A29E; --stone-300:#D6D3D1; --stone-200:#E7E5E4; --stone-100:#F5F5F4; --paper:#FAFAF9;
+  --gold:#A16207; --gold-bright:#CA8A04; --gold-soft:#F5E9CE;
+  --border:#D6D3D1; --border-dark:rgba(255,255,255,.14);
+  --radius:4px; --radius-lg:8px;
+  --measure:68ch;
+  --space-1:.5rem; --space-2:1rem; --space-3:1.5rem; --space-4:2rem;
+  --space-5:3rem; --space-6:4rem; --space-7:6rem; --space-8:8rem;
+  --ease:cubic-bezier(.16,.84,.44,1);
+  --dur:260ms;
+  --shadow-sm:0 1px 2px rgba(12,10,9,.06),0 1px 3px rgba(12,10,9,.08);
+  --shadow-md:0 4px 6px -1px rgba(12,10,9,.07),0 10px 20px -6px rgba(12,10,9,.12);
+  --shadow-lg:0 12px 24px -8px rgba(12,10,9,.18),0 32px 56px -24px rgba(12,10,9,.28);
+  --z-nav:100; --z-bar:90; --z-modal:1000;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1rem; line-height:1.65; font-weight:400;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Bodoni Moda',Georgia,'Times New Roman',serif; font-weight:500; line-height:1.12; margin:0; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; height:auto; display:block}
+:focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px; border-radius:2px}
+::selection{background:var(--gold-soft); color:var(--ink)}
+
+.wrap{width:100%; max-width:1240px; margin-inline:auto; padding-inline:clamp(1.25rem,4vw,2.5rem)}
+.eyebrow{
+  font-size:.72rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold); display:flex; align-items:center; gap:.75rem; margin-bottom:var(--space-2);
+}
+.eyebrow::before{content:""; width:2rem; height:1px; background:currentColor; flex:none}
+.eyebrow--center{justify-content:center}
+.section{padding-block:clamp(4rem,9vw,7.5rem)}
+.section-head{max-width:var(--measure); margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.section-head--center{margin-inline:auto; text-align:center}
+.section-title{font-size:clamp(2rem,4.4vw,3.25rem)}
+.section-sub{margin-top:var(--space-2); color:var(--ink-600); font-size:1.06rem; max-width:60ch}
+.section-head--center .section-sub{margin-inline:auto}
+
+/* ---------- Skip link ---------- */
+.skip{
+  position:absolute; left:50%; top:0; transform:translate(-50%,-120%);
+  background:var(--ink); color:#fff; padding:.75rem 1.25rem; z-index:calc(var(--z-modal) + 10);
+  border-radius:0 0 var(--radius) var(--radius); font-size:.9rem; transition:transform var(--dur) var(--ease);
+}
+.skip:focus{transform:translate(-50%,0)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  --btn-bg:var(--ink); --btn-fg:#fff; --btn-bd:var(--ink);
+  display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  min-height:52px; padding:.9rem 1.75rem; cursor:pointer;
+  background:var(--btn-bg); color:var(--btn-fg); border:1px solid var(--btn-bd);
+  border-radius:var(--radius); font-family:inherit; font-size:.9rem; font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase; white-space:nowrap;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease),
+             border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+             transform var(--dur) var(--ease);
+}
+.btn:hover{box-shadow:var(--shadow-md); transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn--gold{--btn-bg:var(--gold); --btn-bd:var(--gold)}
+.btn--gold:hover{--btn-bg:var(--gold-bright); --btn-bd:var(--gold-bright)}
+.btn--ghost{--btn-bg:transparent; --btn-fg:#fff; --btn-bd:rgba(255,255,255,.4)}
+.btn--ghost:hover{--btn-bg:rgba(255,255,255,.1); --btn-bd:#fff}
+.btn--outline{--btn-bg:transparent; --btn-fg:var(--ink); --btn-bd:var(--border)}
+.btn--outline:hover{--btn-bd:var(--ink)}
+.btn .ico{width:18px; height:18px; flex:none}
+
+/* ---------- Header: slim rule-line bar ----------
+   Compact 56px bar. Transparent over the hero, resolving to a dark
+   glass rail on scroll. Wordmark is type-only — no badge. */
+.hdr{
+  position:fixed; inset-inline:0; top:0; z-index:var(--z-nav);
+  height:56px; display:flex; align-items:center;
+  transition:background var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+             border-color var(--dur) var(--ease), height var(--dur) var(--ease);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.hdr__in{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--space-3); width:100%;
+}
+.hdr.is-stuck{
+  height:52px;
+  background:rgba(12,10,9,.82); backdrop-filter:blur(20px) saturate(1.5);
+  -webkit-backdrop-filter:blur(20px) saturate(1.5);
+  border-bottom-color:rgba(255,255,255,.1); box-shadow:0 1px 24px rgba(12,10,9,.4);
+}
+
+/* Wordmark: type only, gold hairline separating name from locale */
+.brand{display:flex; align-items:baseline; gap:.6rem; color:#fff; min-height:44px; align-items:center}
+.brand__name{
+  font-family:'Bodoni Moda',serif; font-size:1.02rem; letter-spacing:.06em;
+  text-transform:uppercase; white-space:nowrap; line-height:1;
+}
+.brand__rule{width:1px; height:14px; background:var(--gold-bright); opacity:.9; flex:none}
+.brand__sub{
+  font-size:.6rem; letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(255,255,255,.6); white-space:nowrap; line-height:1;
+}
+
+/* Nav: uppercase micro-caps, gold dot marks the current section */
+.nav{display:flex; align-items:center; gap:var(--space-3)}
+.nav > a,.nav-trigger{
+  position:relative; display:inline-flex; align-items:center; gap:.35rem; min-height:44px;
+  padding-inline:.15rem; font-family:inherit; font-size:.7rem; font-weight:500; letter-spacing:.16em;
+  text-transform:uppercase; color:rgba(255,255,255,.72);
+  background:none; border:0; cursor:pointer;
+  transition:color var(--dur) var(--ease);
+}
+.nav > a::after,.nav-trigger::after{
+  content:""; position:absolute; left:50%; bottom:9px; width:3px; height:3px;
+  margin-left:-1.5px; border-radius:50%; background:var(--gold-bright);
+  opacity:0; transform:scale(.4); transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.nav > a:hover,.nav-trigger:hover{color:#fff}
+.nav > a:hover::after,.nav > a[aria-current="true"]::after,
+.nav-trigger:hover::after,.nav-item.is-open .nav-trigger::after{opacity:1; transform:scale(1)}
+.nav > a[aria-current="true"]{color:#fff}
+.nav-caret{width:11px; height:11px; transition:transform var(--dur) var(--ease)}
+.nav-item.is-open .nav-caret{transform:rotate(180deg)}
+
+/* Dropdown menus */
+.nav-item{position:relative}
+.nav-menu{
+  position:absolute; top:calc(100% + 6px); left:50%; transform:translateX(-50%) translateY(-6px);
+  min-width:270px; padding:.6rem; display:flex; flex-direction:column; gap:.1rem;
+  background:rgba(18,15,14,.97); backdrop-filter:blur(20px) saturate(1.4);
+  -webkit-backdrop-filter:blur(20px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.1); border-radius:var(--radius-lg);
+  box-shadow:0 18px 44px rgba(12,10,9,.55);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility var(--dur);
+  z-index:calc(var(--z-nav) + 5);
+}
+.nav-item.is-open .nav-menu{
+  opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+}
+.nav-menu--wide{min-width:340px; left:auto; right:0; transform:translateX(0) translateY(-6px)}
+.nav-item.is-open .nav-menu--wide{transform:translateX(0) translateY(0)}
+.nav-menu a{
+  display:block; padding:.62rem .7rem; border-radius:var(--radius);
+  font-size:.86rem; font-weight:400; letter-spacing:.01em; text-transform:none;
+  color:rgba(255,255,255,.82); white-space:nowrap;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.nav-menu a:hover{background:rgba(255,255,255,.07); color:var(--gold-bright)}
+.nav-menu__head{
+  padding:.5rem .7rem .3rem; font-size:.6rem; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); pointer-events:none;
+}
+.nav-menu__head + a,.nav-menu__head + .nav-menu__cols{margin-top:0}
+.nav-menu__cols{display:grid; grid-template-columns:1fr 1fr; gap:.05rem .5rem}
+
+.hdr__cta{display:flex; align-items:center; gap:.5rem}
+/* Number reads as a plain link; the gold pill carries the action */
+.callbtn{
+  display:inline-flex; align-items:center; gap:.45rem; min-height:44px; padding-inline:.4rem;
+  color:rgba(255,255,255,.82); font-size:.84rem; font-weight:400;
+  font-variant-numeric:tabular-nums; letter-spacing:.02em;
+  transition:color var(--dur) var(--ease);
+}
+.callbtn:hover{color:#fff}
+.callbtn .ico{width:15px; height:15px; color:var(--gold-bright)}
+.hdr__book{
+  display:inline-flex; align-items:center; min-height:44px; padding:.5rem 1.15rem;
+  background:var(--gold); color:#fff; border-radius:999px;
+  font-size:.7rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+  white-space:nowrap;
+  transition:background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.hdr__book:hover{background:var(--gold-bright); transform:translateY(-1px)}
+.burger{
+  display:none; width:44px; height:44px; align-items:center; justify-content:center;
+  background:none; border:0; color:#fff; cursor:pointer; padding:0;
+}
+
+/* ---------- Hero: scroll-scrubbed film stage ---------- */
+/* The stage is tall; the inner panel sticks while the film scrubs. */
+.hero-stage{position:relative; height:340vh}
+.hero-sticky{
+  position:sticky; top:0; height:100svh; min-height:560px;
+  display:flex; align-items:flex-end; isolation:isolate; overflow:hidden;
+}
+.hero__media{position:absolute; inset:0; z-index:-2; background:#0C0A09}
+.hero__video,.hero__fallback{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 58%;
+}
+.hero__video{display:none}
+/* JS enables the film only when scrubbing is supported */
+.hero-stage.film-on .hero__video{display:block}
+.hero-stage.film-on .hero__fallback{display:none}
+
+.hero__scrim{
+  position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(12,10,9,.72) 0%,rgba(12,10,9,.18) 26%,rgba(12,10,9,.06) 44%,rgba(12,10,9,.68) 78%,rgba(12,10,9,.94) 100%),
+    linear-gradient(94deg,rgba(12,10,9,.72) 0%,rgba(12,10,9,.26) 52%,transparent 78%);
+}
+.hero__in{padding-block:clamp(7rem,14vw,9rem) clamp(2.5rem,5vw,3.5rem); width:100%}
+/* Copy sits in the left half so it never fights the parked vehicle on the right */
+.hero__panel{max-width:min(46rem,58%)}
+.hero-stage.film-on .hero__panel{
+  opacity:0; transform:translateX(-28px);
+  transition:opacity 620ms var(--ease), transform 620ms var(--ease);
+}
+.hero-stage.film-on.panel-in .hero__panel{opacity:1; transform:none}
+.hero__cue{
+  position:absolute; left:50%; bottom:1.75rem; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
+  color:rgba(255,255,255,.66); transition:opacity 400ms var(--ease);
+}
+.hero__cue-line{width:1px; height:38px; background:linear-gradient(180deg,rgba(255,255,255,.7),transparent)}
+.hero-stage.panel-in .hero__cue{opacity:0}
+.hero__title{
+  font-size:clamp(2.6rem,6.6vw,5rem); color:#fff; max-width:17ch;
+  text-shadow:0 2px 30px rgba(12,10,9,.5);
+}
+.hero__title em{font-style:italic; color:var(--gold-soft)}
+.hero__lead{
+  margin-top:var(--space-3); max-width:52ch; color:rgba(255,255,255,.9);
+  font-size:clamp(1rem,1.9vw,1.18rem); font-weight:300; line-height:1.7;
+  text-shadow:0 1px 16px rgba(12,10,9,.45);
+}
+.hero__actions{display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--space-4)}
+
+/* ---------- Fare table ---------- */
+.fares{background:var(--stone-100)}
+.fare-ctl{
+  display:flex; flex-wrap:wrap; align-items:flex-end; gap:var(--space-3);
+  margin-bottom:var(--space-3); padding:var(--space-3);
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);
+}
+.field{display:flex; flex-direction:column; gap:.45rem; min-width:220px; flex:1}
+.field label{font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-600); font-weight:500}
+.field select{
+  appearance:none; -webkit-appearance:none;
+  min-height:52px; padding:.75rem 2.75rem .75rem 1rem;
+  font-family:inherit; font-size:1rem; color:var(--ink);
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2344403C' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  border:1px solid var(--border); border-radius:var(--radius); cursor:pointer;
+  transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.field select:hover{border-color:var(--ink-600)}
+.field select:focus-visible{border-color:var(--gold); box-shadow:0 0 0 3px rgba(202,138,4,.18)}
+.fare-note{font-size:.84rem; color:var(--ink-600); flex-basis:100%}
+
+.table-scroll{
+  overflow-x:auto; background:#fff; border:1px solid var(--border);
+  border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); -webkit-overflow-scrolling:touch;
+}
+table.fare{width:100%; border-collapse:collapse; min-width:640px}
+table.fare caption{
+  padding:var(--space-3) var(--space-3) var(--space-2); text-align:left;
+  font-family:'Bodoni Moda',serif; font-size:1.35rem; color:var(--ink);
+}
+table.fare caption span{display:block; margin-top:.3rem; font-family:'Jost',sans-serif; font-size:.86rem; color:var(--ink-600)}
+table.fare th,table.fare td{padding:1rem 1.25rem; text-align:left; border-bottom:1px solid var(--stone-200)}
+table.fare thead th{
+  background:var(--ink); color:#fff; font-size:.74rem; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; border-bottom:0;
+}
+table.fare thead th:not(:first-child){text-align:right}
+table.fare tbody th{font-weight:500; font-size:1rem; white-space:nowrap}
+table.fare td{
+  text-align:right; font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1; font-size:1.02rem; color:var(--ink-700);
+}
+table.fare tbody tr{transition:background var(--dur) var(--ease)}
+table.fare tbody tr:hover{background:var(--gold-soft)}
+table.fare tbody tr:last-child th,table.fare tbody tr:last-child td{border-bottom:0}
+td.best{color:var(--ink); font-weight:500; position:relative}
+td.best::after{
+  content:""; position:absolute; inset-inline:1.25rem auto; bottom:.65rem;
+  width:calc(100% - 2.5rem); height:1px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left; transition:transform var(--dur) var(--ease);
+}
+tr:hover td.best::after{transform:scaleX(1)}
+.fare-foot{
+  display:flex; flex-wrap:wrap; gap:var(--space-2) var(--space-4);
+  margin-top:var(--space-3); font-size:.88rem; color:var(--ink-600);
+}
+.fare-foot span{display:flex; align-items:center; gap:.5rem}
+.fare-foot .ico{width:16px; height:16px; color:var(--gold); flex:none}
+
+/* ---------- Fleet: pinned vehicle stage ----------
+   White studio section. The stage is tall; the inner panel pins while
+   each scroll step advances to the next vehicle. Arrows/dots do the same. */
+.fleet-stage{position:relative; height:300vh; background:#fff}
+.fleet-pin{
+  position:sticky; top:0; height:100svh; min-height:600px;
+  display:flex; align-items:center; overflow:hidden;
+}
+.fleet-pin__in{width:100%; display:flex; flex-direction:column; gap:clamp(1rem,2.5vw,2rem)}
+.fleet-head{text-align:center}
+.fleet-title{font-size:clamp(1.8rem,3.6vw,2.9rem); color:var(--ink)}
+.fleet-head .eyebrow{justify-content:center}
+
+.fleet-view{
+  display:grid; grid-template-columns:1.15fr .85fr;
+  gap:clamp(1rem,3vw,3rem); align-items:center; flex:1; min-height:0;
+}
+
+/* Left: stacked vehicle films on white. Each drives in from the right, turns,
+   and parks three-quarter. The video carries the motion; CSS just cross-fades
+   between the three so switching vehicles is seamless. */
+.fleet-media{position:relative; aspect-ratio:16/9; width:100%; background:#fff}
+.fleet-vid{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  opacity:0; transition:opacity 360ms var(--ease); pointer-events:none;
+}
+.fleet-vid.is-on{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .fleet-vid.is-on{transition:none}
+}
+
+/* Right: spec panels, stacked and cross-faded */
+.fleet-info{position:relative; min-height:clamp(320px,42vh,420px)}
+.fleet-card{
+  position:absolute; inset:0; display:flex; flex-direction:column; gap:var(--space-2);
+  justify-content:center; opacity:0; transform:translateX(18px);
+  transition:opacity 480ms var(--ease), transform 480ms var(--ease);
+  pointer-events:none;
+}
+.fleet-card.is-on{opacity:1; transform:none; pointer-events:auto}
+.fleet-card__tier{font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold)}
+.fleet-card__name{font-size:clamp(1.6rem,3vw,2.4rem); color:var(--ink)}
+.fleet-card__desc{color:var(--ink-600); font-size:1rem; line-height:1.75; max-width:44ch}
+.fleet-spec{
+  list-style:none; margin:0; padding:0; display:grid;
+  grid-template-columns:1fr 1fr; gap:.7rem 1rem;
+}
+.fleet-spec li{display:flex; align-items:center; gap:.55rem; font-size:.9rem; color:var(--ink-700)}
+.fleet-spec .ico{width:16px; height:16px; color:var(--gold); flex:none}
+.fleet-card__foot{
+  display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-2);
+  padding-top:var(--space-2); border-top:1px solid var(--border); max-width:26rem;
+}
+.fleet-card__from{font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-600)}
+.fleet-card__price{font-family:'Bodoni Moda',serif; font-size:1.7rem; color:var(--ink); font-variant-numeric:tabular-nums}
+.fleet-card__price small{font-size:.72rem; font-family:'Jost',sans-serif; color:var(--ink-600); letter-spacing:.04em}
+
+/* Controls */
+.fleet-ctl{display:flex; align-items:center; justify-content:center; gap:var(--space-3)}
+.fleet-arrow{
+  width:48px; height:48px; display:grid; place-items:center; cursor:pointer;
+  background:#fff; color:var(--ink); border:1px solid var(--border); border-radius:50%;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease),
+             border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.fleet-arrow:hover{background:var(--ink); color:#fff; border-color:var(--ink)}
+.fleet-arrow:disabled{opacity:.3; cursor:default}
+.fleet-arrow:disabled:hover{background:#fff; color:var(--ink); border-color:var(--border); transform:none}
+.fleet-arrow .ico{width:18px; height:18px}
+.fleet-dots{display:flex; align-items:center; gap:.5rem}
+.fleet-dot{
+  display:grid; place-items:center; min-width:44px; min-height:44px;
+  background:none; border:0; cursor:pointer; padding:0;
+}
+.fleet-dot span{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+.fleet-dot::before{
+  content:""; width:28px; height:2px; background:var(--stone-300);
+  transition:background var(--dur) var(--ease), width var(--dur) var(--ease);
+}
+.fleet-dot:hover::before{background:var(--stone-400)}
+.fleet-dot.is-on::before{background:var(--gold); width:44px}
+
+/* ---------- Services ---------- */
+.svc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--space-3)}
+.svc{
+  padding:var(--space-4) var(--space-3); background:#fff; border:1px solid var(--border);
+  border-radius:var(--radius-lg); position:relative; overflow:hidden;
+  transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.svc::before{
+  content:""; position:absolute; inset-inline:0; top:0; height:2px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left; transition:transform 420ms var(--ease);
+}
+.svc:hover{border-color:var(--stone-400); box-shadow:var(--shadow-md); transform:translateY(-4px)}
+.svc:hover::before{transform:scaleX(1)}
+.svc__ico{
+  width:48px; height:48px; display:grid; place-items:center; margin-bottom:var(--space-2);
+  border:1px solid var(--border); border-radius:50%; color:var(--gold);
+}
+.svc__ico .ico{width:22px; height:22px}
+.svc h3{font-size:1.4rem; margin-bottom:.6rem}
+.svc p{color:var(--ink-600); font-size:.95rem; line-height:1.7}
+
+/* ---------- Coverage ---------- */
+.cover{background:var(--ink); color:#fff}
+.cover .section-title{color:#fff}
+.cover .section-sub{color:var(--stone-400)}
+.cover-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:1px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.1)}
+.place{
+  display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-1);
+  padding:1.15rem var(--space-2); background:var(--ink);
+  transition:background var(--dur) var(--ease);
+}
+.place:hover{background:var(--ink-700)}
+.place__n{font-size:.98rem}
+.place__p{font-size:.86rem; color:var(--gold-bright); font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* ---------- Booking ---------- */
+.book{background:var(--stone-100)}
+.book-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,5vw,4rem); align-items:start}
+form.book-form{
+  display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2);
+  padding:clamp(1.5rem,3vw,2.25rem); background:#fff;
+  border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md);
+}
+.f-full{grid-column:1/-1}
+.f{display:flex; flex-direction:column; gap:.45rem}
+.f label{font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-600); font-weight:500}
+.f label .req{color:var(--gold); margin-left:.15rem}
+.f input,.f textarea,.f select{
+  min-height:52px; padding:.8rem 1rem; font-family:inherit; font-size:1rem; color:var(--ink);
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.f textarea{min-height:110px; resize:vertical; line-height:1.6}
+.f input:hover,.f textarea:hover{border-color:var(--ink-600)}
+.f input:focus-visible,.f textarea:focus-visible,.f select:focus-visible{
+  border-color:var(--gold); box-shadow:0 0 0 3px rgba(202,138,4,.18); outline:none;
+}
+.f .hint{font-size:.8rem; color:var(--ink-600)}
+.f .err{font-size:.82rem; color:#B91C1C; display:none; align-items:center; gap:.4rem}
+.f .err .ico{width:14px; height:14px; flex:none}
+.f.is-bad input,.f.is-bad textarea{border-color:#B91C1C}
+.f.is-bad .err{display:flex}
+.form-status{
+  grid-column:1/-1; padding:.9rem 1.1rem; border-radius:var(--radius);
+  background:var(--gold-soft); border:1px solid var(--gold); font-size:.92rem; display:none;
+}
+.form-status.on{display:block}
+.aside-block{padding-block:var(--space-2)}
+.aside-block + .aside-block{margin-top:var(--space-4); padding-top:var(--space-4); border-top:1px solid var(--border)}
+.aside-block h3{font-size:1.25rem; margin-bottom:.75rem}
+.contact-row{display:flex; align-items:center; gap:.9rem; padding:.7rem 0; color:var(--ink-700); font-size:1rem}
+.contact-row .ico{width:19px; height:19px; color:var(--gold); flex:none}
+.contact-row a{transition:color var(--dur) var(--ease)}
+.contact-row a:hover{color:var(--gold)}
+.hours{display:flex; align-items:center; gap:.6rem; font-size:.94rem; color:var(--ink-600)}
+.dot{width:8px; height:8px; border-radius:50%; background:#16A34A; flex:none; position:relative}
+.dot::after{
+  content:""; position:absolute; inset:-4px; border-radius:50%;
+  border:1px solid #16A34A; opacity:.5; animation:pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse{0%{transform:scale(.7); opacity:.6}100%{transform:scale(1.5); opacity:0}}
+@media (prefers-reduced-motion:reduce){.dot::after{animation:none}}
+
+/* ---------- Footer ---------- */
+.ftr{background:var(--ink); color:var(--stone-400); padding-block:var(--space-6) var(--space-4); font-size:.9rem}
+.ftr-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:var(--space-4); padding-bottom:var(--space-4); border-bottom:1px solid rgba(255,255,255,.1)}
+.ftr h4{color:#fff; font-size:1rem; margin-bottom:var(--space-2); font-family:'Jost',sans-serif; font-weight:500; letter-spacing:.1em; text-transform:uppercase; font-size:.76rem}
+.ftr ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.6rem}
+.ftr a{transition:color var(--dur) var(--ease)}
+.ftr a:hover{color:var(--gold-bright)}
+.ftr__brand{color:#fff; margin-bottom:var(--space-2)}
+.ftr__desc{max-width:34ch; line-height:1.75}
+.ftr-btm{display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-2); padding-top:var(--space-3); font-size:.82rem}
+address{font-style:normal; line-height:1.8}
+
+/* ---------- Mobile sticky call bar ---------- */
+.callbar{
+  position:fixed; inset-inline:0; bottom:0; z-index:var(--z-bar); display:none;
+  gap:1px; background:rgba(255,255,255,.12);
+  padding-bottom:env(safe-area-inset-bottom,0);
+  box-shadow:0 -8px 24px rgba(12,10,9,.22);
+}
+.callbar a{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem;
+  min-height:56px; background:var(--ink); color:#fff; font-size:.86rem;
+  font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+}
+.callbar a.is-gold{background:var(--gold); color:#fff}
+.callbar .ico{width:17px; height:17px}
+
+/* ---------- Reveal-on-scroll ---------- */
+.rv{opacity:0; transform:translateY(22px); transition:opacity 620ms var(--ease), transform 620ms var(--ease)}
+.rv.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1; transform:none; transition:none}
+  *,*::before,*::after{animation-duration:.01ms !important; transition-duration:.01ms !important}
+  .card:hover,.svc:hover{transform:none}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .book-grid{grid-template-columns:1fr}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav{display:none}
+  .burger{display:inline-flex}
+  .hdr__cta .callbtn span{display:none}
+  .brand__rule,.brand__sub{display:none}
+  .brand__name{font-size:.94rem; letter-spacing:.04em}
+  .callbar{display:flex}
+  body{padding-bottom:56px}
+  .hero__in{padding-block:8rem 3rem}
+  /* Mobile: no scroll-scrubbing (unreliable + heavy). Static poster, panel always visible. */
+  .hero-stage{height:auto}
+  .hero-sticky{position:relative; height:auto; min-height:88svh}
+  .hero-stage.film-on .hero__video{display:none}
+  .hero-stage.film-on .hero__fallback{display:block}
+  .hero-stage.film-on .hero__panel{opacity:1; transform:none}
+  .hero__panel{max-width:none}
+  .hero__cue{display:none}
+  /* Fleet: no pinning on mobile — stack film above its spec panel, arrows drive it */
+  .fleet-stage{height:auto}
+  .fleet-pin{position:relative; height:auto; min-height:0; padding-block:clamp(3rem,8vw,4.5rem)}
+  .fleet-view{grid-template-columns:1fr; gap:var(--space-3)}
+  .fleet-info{min-height:340px}
+  .fleet-card{position:relative; inset:auto; display:none}
+  .fleet-card.is-on{display:flex}
+  .fleet-spec{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  form.book-form{grid-template-columns:1fr}
+  .spec{grid-template-columns:1fr}
+  .ftr-grid{grid-template-columns:1fr}
+}
+@media print{
+  .hdr,.callbar,.hero__media,.btn{display:none}
+  body{background:#fff; color:#000}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ========== SVG sprite ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8l3.2 4-2.5 2.5-1.8-.6a.5.5 0 0 0-.5.8L5 16l1.3 2.3a.5.5 0 0 0 .8-.1l-.6-1.8L9 14l4 3.2a.5.5 0 0 0 .8-.5z"/></symbol>
+    <symbol id="i-rings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="15" r="6"/><circle cx="15" cy="15" r="6"/><path d="M9 3h6l-3 4z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20m-3.5-7.5-13 13m0-13 13 13"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== Header ========== -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="Minibus Taxi Service — home">
+      <span class="brand__name">Minibus Taxi Service</span>
+      <span class="brand__rule" aria-hidden="true"></span>
+      <span class="brand__sub">Cotswolds</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#fares">Fares</a>
+
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services">
+          Services
+          <svg class="nav-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-menu" id="menu-services" role="menu">
+          <a href="airport-transfers.html" role="menuitem">Airport Transfers &mdash; Pick-up and/or drop-off</a>
+          <a href="wedding-transport.html" role="menuitem">Cotswolds Wedding Transport</a>
+          <a href="full-day-hire.html" role="menuitem">Full-Day Hire</a>
+          <a href="estelle-manor.html" role="menuitem">Estelle Manor</a>
+          <a href="soho-farmhouse.html" role="menuitem">Soho Farmhouse</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-menu">
+        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="menu-fleet">
+          Vehicle Fleet
+          <svg class="nav-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-menu nav-menu--wide" id="menu-fleet" role="menu">
+          <div class="nav-menu__head">Our vehicles</div>
+          <a href="fleet.html" role="menuitem">Our Fleet — all vehicles</a>
+          <a href="fleet.html" role="menuitem">Executive Cars (E &amp; S-Class)</a>
+          <a href="fleet.html" role="menuitem">Mercedes Minibus (V-Class)</a>
+          <div class="nav-menu__head">Airport transfers from</div>
+          <div class="nav-menu__cols">
+            <a href="oxford.html" role="menuitem">Oxford</a>
+            <a href="chipping-norton.html" role="menuitem">Chipping Norton</a>
+            <a href="witney.html" role="menuitem">Witney</a>
+            <a href="charlbury.html" role="menuitem">Charlbury</a>
+            <a href="woodstock.html" role="menuitem">Woodstock</a>
+            <a href="abingdon.html" role="menuitem">Abingdon</a>
+            <a href="didcot.html" role="menuitem">Didcot</a>
+            <a href="burford.html" role="menuitem">Burford</a>
+            <a href="stow-on-the-wold.html" role="menuitem">Stow-on-the-Wold</a>
+            <a href="index.html#coverage" role="menuitem">Bourton-on-the-Water</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#coverage">Coverage</a>
+    </nav>
+    <div class="hdr__cta">
+      <a class="callbtn" href="tel:+447772750008">
+        <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>07772 750008</span>
+      </a>
+      <a class="hdr__book" href="#book">Book</a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-m">
+        <svg class="ico" width="22" height="22" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ========== Hero: scroll-scrubbed film ========== -->
+<section class="hero-stage" id="top">
+  <div class="hero-sticky">
+    <div class="hero__media">
+      <video id="hero-film" class="hero__video" playsinline muted preload="auto"
+             poster="assets/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+        <source src="assets/hero-hotel.mp4" type="video/mp4">
+      </video>
+      <img class="hero__fallback" src="assets/hero-poster.jpg" width="1440" height="806"
+           fetchpriority="high" decoding="async"
+           alt="Golden-hour view of a grand Cotswold country house hotel with a gravel forecourt, where Minibus Taxi Service collects guests.">
+    </div>
+    <div class="hero__scrim"></div>
+
+    <div class="wrap hero__in">
+      <div class="hero__panel">
+        <p class="eyebrow" style="color:var(--gold-soft)">Chipping Norton &middot; Oxford &middot; The Cotswolds</p>
+        <h1 class="hero__title">Executive airport transfers, <em>priced before you travel.</em></h1>
+        <p class="hero__lead">
+          Mercedes E-Class, S-Class and 8-seat V-Class, driven by DBS-checked local chauffeurs.
+          Fixed fares to every major South-East and Midlands airport &mdash; no meters, no surge, no surprises.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#fares">
+            See fixed fares
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="tel:+447772750008">
+            <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+            07772 750008
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__cue" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="hero__cue-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Fares ========== -->
+<section class="section fares" id="fares">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">Transparent pricing</p>
+      <h2 class="section-title">Fixed fares from your doorstep</h2>
+      <p class="section-sub">
+        Choose your pickup town to see the exact one-way fare for each vehicle class.
+        Every price is confirmed in writing before you travel.
+      </p>
+    </div>
+
+    <div class="fare-ctl rv">
+      <div class="field">
+        <label for="origin">Pickup location</label>
+        <select id="origin" aria-describedby="fare-note">
+          <option value="oxford">Oxford</option>
+          <option value="chipping-norton" selected>Chipping Norton</option>
+          <option value="witney">Witney</option>
+          <option value="burford">Burford</option>
+          <option value="charlbury">Charlbury</option>
+          <option value="didcot">Didcot</option>
+          <option value="abingdon">Abingdon</option>
+          <option value="woodstock">Woodstock</option>
+          <option value="stow">Stow-on-the-Wold</option>
+        </select>
+      </div>
+      <p class="fare-note" id="fare-note">
+        Prices shown are one-way and include all driver waiting time on outbound journeys.
+      </p>
+    </div>
+
+    <div class="table-scroll rv">
+      <table class="fare">
+        <caption>
+          <span id="fare-cap-title">Fares from Chipping Norton</span>
+          <span id="fare-cap-sub">One-way, per vehicle &mdash; not per passenger.</span>
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Airport</th>
+            <th scope="col">E-Class <span aria-hidden="true">&middot;</span> 1&ndash;3</th>
+            <th scope="col">S-Class <span aria-hidden="true">&middot;</span> 1&ndash;3</th>
+            <th scope="col">V-Class <span aria-hidden="true">&middot;</span> up to 8</th>
+          </tr>
+        </thead>
+        <tbody id="fare-body"><!-- injected --></tbody>
+      </table>
+    </div>
+
+    <div class="fare-foot rv">
+      <span><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg>Airport <strong>returns</strong> add £15&ndash;£30 for car park and waiting time.</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Soho Farmhouse and Estelle Manor to Heathrow: fixed £350.</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Outlying villages may vary slightly &mdash; confirmed on quote.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Fleet: pinned vehicle stage ========== -->
+<section class="fleet-stage" id="fleet" data-count="3">
+  <div class="fleet-pin">
+    <div class="wrap fleet-pin__in">
+
+      <div class="fleet-head">
+        <p class="eyebrow">The fleet</p>
+        <h2 class="fleet-title">Three Mercedes, one standard</h2>
+      </div>
+
+      <div class="fleet-view">
+        <!-- Left: each vehicle drives in from the right, turns, and parks three-quarter.
+             Generated films on pure white to match the section background. -->
+        <div class="fleet-media">
+          <video class="fleet-vid is-on" data-i="0" playsinline muted preload="auto"
+                 poster="assets/fleet-e-still.jpg" aria-hidden="true" tabindex="-1">
+            <source src="assets/fleet-e.mp4" type="video/mp4">
+          </video>
+          <video class="fleet-vid" data-i="1" playsinline muted preload="metadata"
+                 poster="assets/fleet-s-still.jpg" aria-hidden="true" tabindex="-1">
+            <source src="assets/fleet-s.mp4" type="video/mp4">
+          </video>
+          <video class="fleet-vid" data-i="2" playsinline muted preload="metadata"
+                 poster="assets/fleet-v-still.jpg" aria-hidden="true" tabindex="-1">
+            <source src="assets/fleet-v.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Right: the matching spec panel -->
+        <div class="fleet-info" aria-live="polite">
+          <article class="fleet-card is-on" data-i="0">
+            <p class="fleet-card__tier">Executive</p>
+            <h3 class="fleet-card__name">Mercedes E-Class</h3>
+            <p class="fleet-card__desc">Our most-booked saloon. Ample legroom and a quiet, composed ride for solo travellers, couples and small families.</p>
+            <ul class="fleet-spec">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg>1&ndash;3 passengers</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>Onboard WiFi</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-snow"/></svg>Climate control</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg>Card payments</li>
+            </ul>
+            <div class="fleet-card__foot">
+              <span class="fleet-card__from">From, to Heathrow</span>
+              <span class="fleet-card__price">£115 <small>one-way</small></span>
+            </div>
+          </article>
+
+          <article class="fleet-card" data-i="1">
+            <p class="fleet-card__tier">First class</p>
+            <h3 class="fleet-card__name">Mercedes S-Class</h3>
+            <p class="fleet-card__desc">Air suspension, reclining rear seats and Burmester sound. Reserved for occasions that warrant the flagship.</p>
+            <ul class="fleet-spec">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg>1&ndash;3 passengers</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>Airmatic ride</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>Onboard WiFi</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-snow"/></svg>64-colour ambience</li>
+            </ul>
+            <div class="fleet-card__foot">
+              <span class="fleet-card__from">From, to Heathrow</span>
+              <span class="fleet-card__price">£150 <small>one-way</small></span>
+            </div>
+          </article>
+
+          <article class="fleet-card" data-i="2">
+            <p class="fleet-card__tier">Group travel</p>
+            <h3 class="fleet-card__name">Mercedes V-Class</h3>
+            <p class="fleet-card__desc">The mainstay of the fleet. Eight full seats with luggage space behind &mdash; one vehicle instead of two taxis.</p>
+            <ul class="fleet-spec">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg>Up to 8 passengers</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>Onboard WiFi</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-snow"/></svg>Climate control</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg>Card payments</li>
+            </ul>
+            <div class="fleet-card__foot">
+              <span class="fleet-card__from">From, to Heathrow</span>
+              <span class="fleet-card__price">£150 <small>one-way</small></span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Controls: arrows + dots, keyboard accessible -->
+      <div class="fleet-ctl">
+        <button class="fleet-arrow" type="button" data-dir="-1" aria-label="Previous vehicle">
+          <svg class="ico" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>
+        </button>
+        <div class="fleet-dots" role="tablist" aria-label="Choose a vehicle">
+          <button class="fleet-dot is-on" type="button" role="tab" data-i="0" aria-selected="true"><span>Mercedes E-Class</span></button>
+          <button class="fleet-dot" type="button" role="tab" data-i="1" aria-selected="false"><span>Mercedes S-Class</span></button>
+          <button class="fleet-dot" type="button" role="tab" data-i="2" aria-selected="false"><span>Mercedes V-Class</span></button>
+        </div>
+        <button class="fleet-arrow" type="button" data-dir="1" aria-label="Next vehicle">
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== Services ========== -->
+<section class="section" id="services" style="background:var(--stone-100)">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">What we do</p>
+      <h2 class="section-title">Beyond the airport run</h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc__ico"><svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg></div>
+        <h3>Airport transfers</h3>
+        <p>Pick-up, drop-off or both, to every major airport in the South-East and Midlands. Early starts are our normal hours &mdash; we run around your flight, not the other way round.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc__ico"><svg class="ico" aria-hidden="true"><use href="#i-rings"/></svg></div>
+        <h3>Wedding transport</h3>
+        <p>Cotswold weddings, guest shuttles and end-of-night runs. One V-Class moves eight guests between venue and accommodation in a single trip.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc__ico"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></div>
+        <h3>Full-day hire</h3>
+        <p>A car and chauffeur for the whole day &mdash; corporate visits, race meetings, distillery and vineyard tours, or a day of meetings across several towns.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Coverage ========== -->
+<section class="section cover" id="coverage">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">Where we collect</p>
+      <h2 class="section-title">Serving the Cotswolds and Oxfordshire</h2>
+      <p class="section-sub">Based in Chipping Norton, covering the surrounding towns and villages. Prices below are the lowest available fare to Heathrow.</p>
+    </div>
+    <div class="cover-grid rv">
+      <div class="place"><span class="place__n">Oxford</span><span class="place__p">from £115</span></div>
+      <div class="place"><span class="place__n">Abingdon</span><span class="place__p">from £120</span></div>
+      <div class="place"><span class="place__n">Didcot</span><span class="place__p">from £130</span></div>
+      <div class="place"><span class="place__n">Witney</span><span class="place__p">from £135</span></div>
+      <div class="place"><span class="place__n">Charlbury</span><span class="place__p">from £150</span></div>
+      <div class="place"><span class="place__n">Woodstock</span><span class="place__p">from £165</span></div>
+      <div class="place"><span class="place__n">Burford</span><span class="place__p">from £165</span></div>
+      <div class="place"><span class="place__n">Chipping Norton</span><span class="place__p">from £175</span></div>
+      <div class="place"><span class="place__n">Stow-on-the-Wold</span><span class="place__p">from £260</span></div>
+      <div class="place"><span class="place__n">Soho Farmhouse</span><span class="place__p">£350 fixed</span></div>
+      <div class="place"><span class="place__n">Estelle Manor</span><span class="place__p">£350 fixed</span></div>
+      <div class="place"><span class="place__n">Bourton-on-the-Water</span><span class="place__p">on request</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Booking ========== -->
+<section class="section book" id="book">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">Reserve your journey</p>
+      <h2 class="section-title">Request a fixed quote</h2>
+      <p class="section-sub">Tell us where and when. We reply with a confirmed, all-in price &mdash; usually within the hour.</p>
+    </div>
+
+    <div class="book-grid">
+      <form class="book-form rv" id="quote" novalidate>
+        <div class="f f-full">
+          <label for="q-name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="q-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+          <span class="err" id="e-name"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Please enter your name so we know who to reply to.</span>
+        </div>
+        <div class="f">
+          <label for="q-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="q-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="e-email">
+          <span class="err" id="e-email"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Please enter a valid email address, e.g. name@example.com</span>
+        </div>
+        <div class="f">
+          <label for="q-tel">Phone <span class="req" aria-hidden="true">*</span></label>
+          <input id="q-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-tel">
+          <span class="err" id="e-tel"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Please enter a contact number.</span>
+        </div>
+        <div class="f">
+          <label for="q-from">Pickup address <span class="req" aria-hidden="true">*</span></label>
+          <input id="q-from" name="from" type="text" placeholder="Town or postcode" required aria-describedby="e-from">
+          <span class="err" id="e-from"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Please tell us where to collect you.</span>
+        </div>
+        <div class="f">
+          <label for="q-to">Destination <span class="req" aria-hidden="true">*</span></label>
+          <input id="q-to" name="to" type="text" placeholder="Airport or address" required aria-describedby="e-to">
+          <span class="err" id="e-to"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Please tell us where you're heading.</span>
+        </div>
+        <div class="f">
+          <label for="q-date">Date &amp; time</label>
+          <input id="q-date" name="datetime" type="datetime-local">
+          <span class="hint">Flight time if you know it &mdash; we'll build in the buffer.</span>
+        </div>
+        <div class="f">
+          <label for="q-pax">Passengers</label>
+          <select id="q-pax" name="pax">
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div class="f f-full">
+          <label for="q-msg">Anything else</label>
+          <textarea id="q-msg" name="message" placeholder="Luggage, child seats, extra stops, return journey&hellip;"></textarea>
+        </div>
+        <div class="form-status" id="q-status" role="status" aria-live="polite"></div>
+        <div class="f-full">
+          <button class="btn btn--gold" type="submit" style="width:100%">
+            Request my fixed quote
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <aside class="rv">
+        <div class="aside-block">
+          <h3>Prefer to speak to someone?</h3>
+          <div class="contact-row">
+            <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+            <a href="tel:+447772750008">07772 750008</a>
+          </div>
+          <div class="contact-row">
+            <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>
+            <a href="https://wa.me/447772750008">WhatsApp us</a>
+          </div>
+          <div class="contact-row">
+            <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+            <a href="mailto:book@minibustaxiservice.uk">book@minibustaxiservice.uk</a>
+          </div>
+          <p class="hours" style="margin-top:1rem">
+            <span class="dot" aria-hidden="true"></span>Taking bookings now &mdash; 24 hours a day
+          </p>
+        </div>
+        <div class="aside-block">
+          <h3>Where we're based</h3>
+          <address>
+            <svg class="ico" aria-hidden="true" style="width:18px;height:18px;color:var(--gold);vertical-align:-3px"><use href="#i-pin"/></svg>
+            61 Walterbush Road<br>
+            <span style="padding-left:1.6rem">Chipping Norton</span><br>
+            <span style="padding-left:1.6rem">Oxfordshire OX7 5DP</span>
+          </address>
+        </div>
+        <div class="aside-block">
+          <h3>What's always included</h3>
+          <div class="contact-row"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>DBS-checked, local drivers</div>
+          <div class="contact-row"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg>Price fixed at time of booking</div>
+          <div class="contact-row"><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>WiFi and climate control</div>
+          <div class="contact-row"><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg>Card or cash on the day</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a class="brand ftr__brand" href="#top">
+          <span class="brand__txt">
+            <span class="brand__name">Minibus Taxi Service</span>
+            <span class="brand__sub">Cotswolds &middot; Oxfordshire</span>
+          </span>
+        </a>
+        <p class="ftr__desc">Executive airport transfers, wedding transport and full-day hire across the Cotswolds, operating 24 hours a day from Chipping Norton.</p>
+      </div>
+      <div>
+        <h4>Fares</h4>
+        <ul>
+          <li><a href="#fares">Oxford</a></li>
+          <li><a href="#fares">Chipping Norton</a></li>
+          <li><a href="#fares">Witney</a></li>
+          <li><a href="#fares">Burford</a></li>
+          <li><a href="#fares">Stow-on-the-Wold</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Airport transfers</a></li>
+          <li><a href="#services">Wedding transport</a></li>
+          <li><a href="#services">Full-day hire</a></li>
+          <li><a href="#fleet">Our fleet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447772750008">07772 750008</a></li>
+          <li><a href="https://wa.me/447772750008">WhatsApp</a></li>
+          <li><a href="mailto:book@minibustaxiservice.uk">book@minibustaxiservice.uk</a></li>
+        </ul>
+        <address style="margin-top:1rem">61 Walterbush Road<br>Chipping Norton<br>Oxfordshire OX7 5DP</address>
+      </div>
+    </div>
+    <div class="ftr-btm">
+      <span>&copy; <span id="yr">2026</span> Minibus Taxi Service. All rights reserved.</span>
+      <span>Fares shown are one-way and correct at time of publication.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== Mobile sticky bar ========== -->
+<div class="callbar" role="group" aria-label="Quick contact">
+  <a href="tel:+447772750008"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/447772750008"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
+  <a class="is-gold" href="#book"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg>Get quote</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- Fare data: verbatim from the published Ninja Tables ---- */
+  var AIRPORTS = ["Heathrow","Gatwick","Luton","Stansted","London City","Birmingham","Southampton","Bristol"];
+  var FARES = {
+    "oxford":          {label:"Oxford",           rows:[[115,150,150],[170,230,230],[145,180,180],[190,265,265],[195,260,260],[150,190,190],[175,230,230],[185,220,220]]},
+    "chipping-norton": {label:"Chipping Norton",  rows:[[175,220,220],[225,270,270],[190,250,250],[240,290,290],[250,300,300],[185,245,245],[180,240,240],[200,270,270]]},
+    "witney":          {label:"Witney",           rows:[[135,180,180],[190,235,235],[170,210,210],[215,260,260],[205,250,250],[170,235,235],[180,245,245],[190,250,250]]},
+    "burford":         {label:"Burford",          rows:[[165,195,260],[195,235,300],[175,215,270],[270,295,295],[275,300,300],[170,230,250],[175,200,220],[180,225,260]]},
+    "charlbury":       {label:"Charlbury",        rows:[[150,200,200],[195,255,255],[160,210,210],[200,255,255],[220,255,255],[150,200,200],[145,170,170],[185,250,250]]},
+    "didcot":          {label:"Didcot",           rows:[[130,175,175],[185,240,240],[150,195,195],[200,250,250],[210,270,270],[180,240,240],[160,210,210],[195,250,250]]},
+    "abingdon":        {label:"Abingdon",         rows:[[120,160,160],[185,225,225],[165,225,225],[210,255,255],[210,250,250],[170,220,220],[180,235,235],[200,240,240]]},
+    "woodstock":       {label:"Woodstock",        rows:[[165,195,210],[235,250,270],[160,220,220],[230,285,285],[235,285,285],[155,200,200],[170,220,220],[210,260,260]]},
+    "stow":            {label:"Stow-on-the-Wold", rows:[[260,280,335],[300,300,350],[230,250,320],[300,320,370],[300,310,350],[170,200,235],[210,260,280],[230,300,325]]}
+  };
+
+  var gbp = new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+  var body = document.getElementById("fare-body");
+  var capT = document.getElementById("fare-cap-title");
+  var sel  = document.getElementById("origin");
+
+  function render(key){
+    var d = FARES[key]; if(!d) return;
+    var html = "";
+    for(var i=0;i<AIRPORTS.length;i++){
+      var r = d.rows[i];
+      var min = Math.min(r[0],r[1],r[2]);
+      html += "<tr><th scope='row'>" + AIRPORTS[i] + "</th>";
+      for(var c=0;c<3;c++){
+        html += "<td" + (r[c]===min ? " class='best'" : "") + ">" + gbp.format(r[c]) + "</td>";
+      }
+      html += "</tr>";
+    }
+    body.innerHTML = html;
+    capT.textContent = "Fares from " + d.label;
+  }
+  render(sel.value);
+  sel.addEventListener("change", function(){ render(this.value); });
+
+  /* ---- Hero: scroll-scrubbed film ----
+     Scroll position drives video currentTime. Enabled only on pointer-fine,
+     wide viewports with reduced-motion off; everywhere else the static
+     poster stays and the panel is visible immediately. */
+  (function(){
+    var stage = document.getElementById("top");
+    var film  = document.getElementById("hero-film");
+    if(!stage || !film) return;
+
+    var okWidth  = matchMedia("(min-width: 861px)").matches;
+    var okMotion = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var okData   = !(navigator.connection && (navigator.connection.saveData ||
+                    /2g/.test(navigator.connection.effectiveType || "")));
+    if(!(okWidth && okMotion && okData)) return;
+
+    var target = 0, current = 0, dur = 0, raf = null, ready = false;
+
+    function metaReady(){
+      dur = film.duration || 0;
+      if(!dur || !isFinite(dur)) return;
+      ready = true;
+      stage.classList.add("film-on");
+      update();
+    }
+    if(film.readyState >= 1) metaReady();
+    film.addEventListener("loadedmetadata", metaReady, {once:true});
+
+    /* The panel/scrub state must track scroll position even when no scroll
+       event fires — e.g. metadata arriving after a restored scroll position,
+       an in-page anchor jump, or a programmatic scrollTo. A rAF loop while
+       the stage is on screen keeps the state honest in all of those cases. */
+    var watching = false;
+    function watch(){
+      if(!watching) return;
+      update();
+      requestAnimationFrame(watch);
+    }
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          watching = e.isIntersecting;
+          if(watching) watch();
+        });
+      },{threshold:0}).observe(stage);
+    }
+
+    function progress(){
+      var r = stage.getBoundingClientRect();
+      var travel = r.height - window.innerHeight;
+      if(travel <= 0) return 0;
+      return Math.min(1, Math.max(0, -r.top / travel));
+    }
+
+    function update(){
+      if(!ready) return;
+      var p = progress();
+      target = p * dur;
+      // Panel slides in from the left once the van has arrived and settled,
+      // so the copy lands against the parked vehicle rather than the empty drive.
+      stage.classList.toggle("panel-in", p > 0.58);
+      if(raf === null) raf = requestAnimationFrame(tick);
+    }
+
+    function tick(){
+      // Ease toward the target so scrubbing feels weighted, not twitchy
+      current += (target - current) * 0.16;
+      if(Math.abs(target - current) < 0.004){ current = target; }
+      try { film.currentTime = current; } catch(e){}
+      raf = (current === target) ? null : requestAnimationFrame(tick);
+    }
+
+    addEventListener("scroll", update, {passive:true});
+    addEventListener("resize", update, {passive:true});
+  })();
+
+  /* ---- Fleet: pinned stage, scroll steps + arrows/dots ---- */
+  (function(){
+    var stage = document.getElementById("fleet");
+    if(!stage) return;
+    var vids  = [].slice.call(stage.querySelectorAll(".fleet-vid"));
+    var cards = [].slice.call(stage.querySelectorAll(".fleet-card"));
+    var dots  = [].slice.call(stage.querySelectorAll(".fleet-dot"));
+    var arrows= [].slice.call(stage.querySelectorAll(".fleet-arrow"));
+    var n = vids.length, cur = -1;
+
+    function show(i, replay){
+      i = Math.max(0, Math.min(n - 1, i));
+      if(i === cur) return;
+      cur = i;
+      vids.forEach(function(v, k){
+        var on = k === i;
+        v.classList.toggle("is-on", on);
+        if(on){
+          if(replay){ try { v.currentTime = 0; v.play().catch(function(){}); } catch(e){} }
+        } else {
+          try { v.pause(); } catch(e){}
+        }
+      });
+      cards.forEach(function(c, k){ c.classList.toggle("is-on", k === i); });
+      dots.forEach(function(d, k){
+        d.classList.toggle("is-on", k === i);
+        d.setAttribute("aria-selected", k === i ? "true" : "false");
+      });
+      arrows.forEach(function(a){
+        var dir = +a.getAttribute("data-dir");
+        a.disabled = (dir < 0 && i === 0) || (dir > 0 && i === n - 1);
+      });
+    }
+
+    var deep = matchMedia("(min-width: 861px)").matches;
+
+    // On desktop the stage is pinned and scroll position drives the index, so a
+    // control must MOVE the scroll to the matching band — otherwise the scroll
+    // loop would immediately snap back to whatever the current scroll maps to.
+    // On mobile there's no pinning, so we just switch directly.
+    function goTo(i){
+      i = Math.max(0, Math.min(n - 1, i));
+      if(deep){
+        var travel = stage.offsetHeight - window.innerHeight;
+        // Aim at the centre of band i so it lands cleanly inside that segment.
+        var p = (i + 0.5) / n;
+        window.scrollTo({ top: Math.round(stage.offsetTop + travel * p), behavior: "smooth" });
+        // show() will follow from the scroll loop; call it too so the change feels instant.
+        show(i, true);
+      } else {
+        show(i, true);
+      }
+    }
+
+    arrows.forEach(function(a){
+      a.addEventListener("click", function(){ goTo(cur + (+a.getAttribute("data-dir"))); });
+    });
+    dots.forEach(function(d){
+      d.addEventListener("click", function(){ goTo(+d.getAttribute("data-i")); });
+    });
+    // Keyboard: left/right when the stage is in view
+    addEventListener("keydown", function(e){
+      if(e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      var r = stage.getBoundingClientRect();
+      if(r.top > window.innerHeight * .5 || r.bottom < window.innerHeight * .5) return;
+      goTo(cur + (e.key === "ArrowRight" ? 1 : -1));
+    });
+
+    // Scroll position picks the vehicle while the stage is pinned
+    function fromScroll(){
+      if(!deep) return;
+      var r = stage.getBoundingClientRect();
+      var travel = r.height - window.innerHeight;
+      if(travel <= 0) return;
+      var p = Math.min(1, Math.max(0, -r.top / travel));
+      var want = Math.min(n - 1, Math.floor(p * n));
+      // show() no-ops when the index is unchanged, so the in-flight
+      // drive-in transition is never restarted by the rAF loop.
+      if(want !== cur) show(want, true);
+    }
+    if("IntersectionObserver" in window){
+      var live = false;
+      function loop(){ if(!live) return; fromScroll(); requestAnimationFrame(loop); }
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ live = e.isIntersecting; if(live) loop(); });
+      },{threshold:0}).observe(stage);
+    }
+
+    show(0, false);
+  })();
+
+  /* ---- Nav dropdowns: hover on desktop, click + keyboard everywhere ---- */
+  (function(){
+    var items = [].slice.call(document.querySelectorAll(".nav-item.has-menu"));
+    if(!items.length) return;
+    var hoverable = matchMedia("(hover: hover) and (min-width: 861px)").matches;
+    var closeTimer = null;
+
+    function open(item){
+      items.forEach(function(o){ if(o !== item) setOpen(o, false); });
+      setOpen(item, true);
+    }
+    function setOpen(item, on){
+      item.classList.toggle("is-open", on);
+      item.querySelector(".nav-trigger").setAttribute("aria-expanded", on ? "true" : "false");
+      // Drive visibility directly too, so opening never depends on the
+      // class-based cascade resolving in an unexpected environment.
+      var menu = item.querySelector(".nav-menu");
+      if(on){
+        menu.style.opacity = "1";
+        menu.style.visibility = "visible";
+        menu.style.pointerEvents = "auto";
+        menu.style.transform = menu.classList.contains("nav-menu--wide")
+          ? "translateX(0) translateY(0)" : "translateX(-50%) translateY(0)";
+      } else {
+        menu.style.opacity = "";
+        menu.style.visibility = "";
+        menu.style.pointerEvents = "";
+        menu.style.transform = "";
+      }
+    }
+    function closeAll(){ items.forEach(function(o){ setOpen(o, false); }); }
+
+    items.forEach(function(item){
+      var trigger = item.querySelector(".nav-trigger");
+
+      if(hoverable){
+        // Pointer devices: hover opens/closes. Click just keeps it open
+        // (and doesn't toggle it shut) so hover and click never fight.
+        item.addEventListener("mouseenter", function(){ clearTimeout(closeTimer); open(item); });
+        item.addEventListener("mouseleave", function(){
+          closeTimer = setTimeout(function(){ setOpen(item, false); }, 140);
+        });
+        trigger.addEventListener("click", function(e){
+          e.preventDefault(); e.stopPropagation();
+          open(item);
+        });
+      } else {
+        // Touch / keyboard: click toggles.
+        trigger.addEventListener("click", function(e){
+          e.preventDefault(); e.stopPropagation();
+          var isOpen = item.classList.contains("is-open");
+          closeAll();
+          if(!isOpen) open(item);
+        });
+      }
+
+      // Escape closes and returns focus to the trigger
+      item.addEventListener("keydown", function(e){
+        if(e.key === "Escape"){ setOpen(item, false); trigger.focus(); }
+      });
+    });
+
+    // Click outside closes any open menu
+    document.addEventListener("click", function(e){
+      if(!e.target.closest(".nav-item.has-menu")) closeAll();
+    });
+  })();
+
+  /* ---- Sticky header ---- */
+  var hdr = document.getElementById("hdr"), ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      hdr.classList.toggle("is-stuck", window.scrollY > 40);
+      ticking = false;
+    });
+  }
+  addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* ---- Reveal on scroll ---- */
+  var rv = document.querySelectorAll(".rv");
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){
+          var el = e.target;
+          setTimeout(function(){ el.classList.add("in"); }, Math.min(i*60,240));
+          io.unobserve(el);
+        }
+      });
+    },{rootMargin:"0px 0px -8% 0px", threshold:.08});
+    rv.forEach(function(el){ io.observe(el); });
+  } else {
+    rv.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- Nav scroll-spy ---- */
+  var links = [].slice.call(document.querySelectorAll(".nav a"));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if("IntersectionObserver" in window && targets.length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        links.forEach(function(a){
+          a.toggleAttribute("aria-current", a.getAttribute("href") === "#" + e.target.id);
+        });
+      });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    targets.forEach(function(t){ spy.observe(t); });
+  }
+
+  /* ---- Form validation: validate on blur, report on submit ---- */
+  var form = document.getElementById("quote");
+  var status = document.getElementById("q-status");
+
+  function bad(f){
+    var el = f.querySelector("input,textarea");
+    if(!el || !el.required) return false;
+    if(!el.value.trim()) return true;
+    if(el.type === "email") return !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+    return false;
+  }
+  function mark(f){
+    var isBad = bad(f);
+    f.classList.toggle("is-bad", isBad);
+    var el = f.querySelector("input,textarea");
+    if(el) el.setAttribute("aria-invalid", isBad ? "true" : "false");
+    return !isBad;
+  }
+
+  [].forEach.call(form.querySelectorAll(".f"), function(f){
+    var el = f.querySelector("input,textarea");
+    if(!el) return;
+    el.addEventListener("blur", function(){ if(el.value.trim() || f.classList.contains("is-bad")) mark(f); });
+    el.addEventListener("input", function(){ if(f.classList.contains("is-bad")) mark(f); });
+  });
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var fields = [].slice.call(form.querySelectorAll(".f"));
+    var firstBad = null;
+    fields.forEach(function(f){ if(!mark(f) && !firstBad) firstBad = f; });
+
+    if(firstBad){
+      status.className = "form-status on";
+      status.style.background = "#FEF2F2";
+      status.style.borderColor = "#B91C1C";
+      status.textContent = "Please correct the highlighted fields and try again.";
+      var el = firstBad.querySelector("input,textarea");
+      if(el) el.focus();
+      return;
+    }
+    status.className = "form-status on";
+    status.style.background = "";
+    status.style.borderColor = "";
+    status.textContent = "Thank you — your request has been prepared. This demo page does not send email; connect it to your booking inbox to go live.";
+  });
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".burger");
+  var nav = document.querySelector(".nav");
+  burger.addEventListener("click", function(){
+    var open = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!open));
+    nav.style.display = open ? "" : "flex";
+    if(!open){
+      nav.style.position = "absolute";
+      nav.style.insetInline = "0";
+      nav.style.top = "100%";
+      nav.style.flexDirection = "column";
+      nav.style.alignItems = "flex-start";
+      nav.style.gap = "0";
+      nav.style.padding = ".5rem clamp(1.25rem,4vw,2.5rem) 1.25rem";
+      nav.style.background = "rgba(12,10,9,.96)";
+      nav.style.backdropFilter = "blur(20px)";
+      nav.style.borderBottom = "1px solid rgba(255,255,255,.1)";
+      nav.style.boxShadow = "0 12px 32px rgba(12,10,9,.5)";
+      [].forEach.call(nav.querySelectorAll("a"), function(a){
+        a.style.color = "rgba(255,255,255,.85)";
+        a.style.padding = "0.9rem 0";
+        a.style.width = "100%";
+      });
+    }
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A" && burger.getAttribute("aria-expanded") === "true"){
+      burger.click();
+    }
+  });
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

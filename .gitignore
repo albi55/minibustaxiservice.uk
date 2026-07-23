@@ -1,0 +1,11 @@
+# Playwright / test artifacts
+.playwright-mcp/
+*.jpeg
+!redesign/assets/*.jpeg
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
