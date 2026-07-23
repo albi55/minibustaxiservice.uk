@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estelle Manor to Heathrow Transfer | Minibus Taxi Service</title>
-<meta name="description" content="Executive transfers to and from Estelle Manor — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.">
+<title>Estelle Manor to Heathrow Airport Transfer | Minibus Taxi Service</title>
+<meta name="description" content="An executive door-to-door taxi service to get you to the airport from Estelle Manor with comfort and ease — a fixed £350 to London Heathrow, or a confirmed">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -524,6 +524,20 @@ address{font-style:normal; line-height:1.8}
   .brand__rule,.brand__sub{display:none}
   .brand__name{font-size:.94rem; letter-spacing:.04em}
   .callbar{display:flex}
+  /* Mobile dropdowns: render inline inside the open menu, not as floating overlays */
+  .nav-item{width:100%; position:static}
+  .nav-item .nav-trigger{width:100%; justify-content:space-between; padding-block:.9rem}
+  .nav-menu,.nav-menu--wide{
+    position:static; inset:auto; width:100%; min-width:0;
+    transform:none !important; box-shadow:none; border:0; border-radius:0;
+    background:rgba(255,255,255,.04); backdrop-filter:none; -webkit-backdrop-filter:none;
+    padding:.25rem 0 .5rem .75rem; margin-bottom:.25rem;
+    opacity:1 !important; visibility:visible !important; pointer-events:auto !important;
+    display:none;
+  }
+  .nav-item.is-open .nav-menu{display:flex}
+  .nav-menu__cols{grid-template-columns:1fr}
+  .nav-menu a{white-space:normal; padding-block:.7rem}
   body{padding-bottom:56px}
   .hero__in{padding-block:8rem 3rem}
   /* Mobile: no scroll-scrubbing (unreliable + heavy). Static poster, panel always visible. */
@@ -692,7 +706,7 @@ address{font-style:normal; line-height:1.8}
   <div class="wrap">
     <p class="crumb"><a href="index.html">Home</a> / <span>Estelle Manor</span></p>
     <h1>Estelle Manor to Heathrow, <em>fixed £350.</em></h1>
-    <p class="lead">Executive transfers to and from Estelle Manor — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.</p>
+    <p class="lead">An executive door-to-door taxi service to get you to the airport from Estelle Manor with comfort and ease — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.</p>
     <div class="actions">
       <a class="btn btn--gold" href="index.html#book">Request a fixed quote<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       <a class="btn btn--ghost" href="tel:+447772750008"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>07772 750008</a>
@@ -705,9 +719,20 @@ address{font-style:normal; line-height:1.8}
     <div class="prose">
       <div class="svc__ico" style="margin-bottom:1.25rem"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
       <h2 class="section-title">Estelle Manor</h2>
-      <p>We provide discreet, punctual Mercedes transfers to and from Estelle Manor for guests arriving or departing by air.</p>
-      <p>Travel in the E-Class or S-Class for individuals and couples, or the 8-seat V-Class for groups with luggage. Every journey is fixed-price and available around the clock.</p>
+      <p>Estelle Manor is one of Oxfordshire's most renowned destinations, and its popularity can make reliable airport transport hard to come by. We take the stress out of the journey for business and leisure guests alike, with a punctual, pre-booked transfer that's ready when you are.</p>
+      <p>Travel in a Mercedes E-Class or S-Class for individuals and couples, or our executive 8-seat V-Class minibus for groups and families with luggage — one vehicle instead of two taxis. Every car has a comfortable, spacious interior with the latest electronics and GPS tracking so we route around traffic and keep to time.</p>
+      <p>Every driver is DBS-checked, licensed and knows the local roads. We're happy to accommodate passengers with reduced mobility, and every fare is fixed at the point of booking — no surge pricing, no hidden fees. Available 24 hours a day, door to door.</p>
       <p><strong>Fixed £350</strong> to London Heathrow, or a confirmed fixed price to any other airport on request.</p>
+      
+      <h3 style="font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-top:2rem">What's included</h3>
+      <ul class="fleet-spec" style="margin-top:1rem">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>DBS-checked, licensed drivers</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Door-to-door service</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>Fast onboard WiFi</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg>Card payments accepted</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-snow"/></svg>Entertainment & climate control</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg>Fixed price, no surge, no hidden fees</li>
+      </ul>
       <h3 style="font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-top:2rem">Airport transfers from</h3>
       <div class="related">
       <a href="oxford.html">Oxford</a>

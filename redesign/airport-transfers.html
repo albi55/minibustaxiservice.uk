@@ -524,6 +524,20 @@ address{font-style:normal; line-height:1.8}
   .brand__rule,.brand__sub{display:none}
   .brand__name{font-size:.94rem; letter-spacing:.04em}
   .callbar{display:flex}
+  /* Mobile dropdowns: render inline inside the open menu, not as floating overlays */
+  .nav-item{width:100%; position:static}
+  .nav-item .nav-trigger{width:100%; justify-content:space-between; padding-block:.9rem}
+  .nav-menu,.nav-menu--wide{
+    position:static; inset:auto; width:100%; min-width:0;
+    transform:none !important; box-shadow:none; border:0; border-radius:0;
+    background:rgba(255,255,255,.04); backdrop-filter:none; -webkit-backdrop-filter:none;
+    padding:.25rem 0 .5rem .75rem; margin-bottom:.25rem;
+    opacity:1 !important; visibility:visible !important; pointer-events:auto !important;
+    display:none;
+  }
+  .nav-item.is-open .nav-menu{display:flex}
+  .nav-menu__cols{grid-template-columns:1fr}
+  .nav-menu a{white-space:normal; padding-block:.7rem}
   body{padding-bottom:56px}
   .hero__in{padding-block:8rem 3rem}
   /* Mobile: no scroll-scrubbing (unreliable + heavy). Static poster, panel always visible. */
@@ -708,6 +722,7 @@ address{font-style:normal; line-height:1.8}
       <p>Every airport transfer is quoted on a fixed-price basis and confirmed in writing before you travel. We monitor your flight so that delays and early arrivals are handled without extra stress or hidden charges.</p>
       <p>We serve Heathrow, Gatwick, Luton, Stansted, London City, Birmingham, Southampton and Bristol from across the Cotswolds and Oxfordshire. Choose the Mercedes E-Class, S-Class or 8-seat V-Class to suit your party and luggage.</p>
       <p>Airport returns include a modest £15–£30 allowance for car park and waiting time. Everything else is fixed at the point of booking.</p>
+      
       
       <h3 style="font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-top:2rem">Airport transfers from</h3>
       <div class="related">

@@ -277,7 +277,12 @@ function locationPage(loc) {
 }
 
 /* ---- Service page ---- */
-function servicePage({ file, title, eyebrow, heading, lead, icon, paras, showFaresNote, car }) {
+function servicePage({ file, title, eyebrow, heading, lead, icon, paras, showFaresNote, car, includes }) {
+  const includesBlock = includes ? `
+      <h3 style="font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-top:2rem">What's included</h3>
+      <ul class="fleet-spec" style="margin-top:1rem">
+        ${includes.map(s => `<li><svg class="ico" aria-hidden="true"><use href="#${s[0]}"/></svg>${s[1]}</li>`).join("\n        ")}
+      </ul>` : "";
   const body = `
 <section class="page-hero">
   ${heroMedia(car || "v")}
@@ -299,6 +304,7 @@ function servicePage({ file, title, eyebrow, heading, lead, icon, paras, showFar
       <h2 class="section-title">${eyebrow}</h2>
       ${paras.map(p => `<p>${p}</p>`).join("\n      ")}
       ${showFaresNote ? `<p><strong>Fixed £350</strong> to London Heathrow, or a confirmed fixed price to any other airport on request.</p>` : ""}
+      ${includesBlock}
       <h3 style="font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-top:2rem">Airport transfers from</h3>
       <div class="related">
       ${relatedLocations(null)}
@@ -442,14 +448,23 @@ pages.push(servicePage({
 }));
 pages.push(servicePage({
   file: "estelle-manor.html", eyebrow: "Estelle Manor", car: "s",
-  title: "Estelle Manor to Heathrow Transfer | Minibus Taxi Service",
+  title: "Estelle Manor to Heathrow Airport Transfer | Minibus Taxi Service",
   heading: "Estelle Manor to Heathrow, <em>fixed £350.</em>",
   icon: "i-pin",
-  lead: "Executive transfers to and from Estelle Manor — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.",
+  lead: "An executive door-to-door taxi service to get you to the airport from Estelle Manor with comfort and ease — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.",
   showFaresNote: true,
   paras: [
-    "We provide discreet, punctual Mercedes transfers to and from Estelle Manor for guests arriving or departing by air.",
-    "Travel in the E-Class or S-Class for individuals and couples, or the 8-seat V-Class for groups with luggage. Every journey is fixed-price and available around the clock.",
+    "Estelle Manor is one of Oxfordshire's most renowned destinations, and its popularity can make reliable airport transport hard to come by. We take the stress out of the journey for business and leisure guests alike, with a punctual, pre-booked transfer that's ready when you are.",
+    "Travel in a Mercedes E-Class or S-Class for individuals and couples, or our executive 8-seat V-Class minibus for groups and families with luggage — one vehicle instead of two taxis. Every car has a comfortable, spacious interior with the latest electronics and GPS tracking so we route around traffic and keep to time.",
+    "Every driver is DBS-checked, licensed and knows the local roads. We're happy to accommodate passengers with reduced mobility, and every fare is fixed at the point of booking — no surge pricing, no hidden fees. Available 24 hours a day, door to door.",
+  ],
+  includes: [
+    ["i-shield","DBS-checked, licensed drivers"],
+    ["i-pin","Door-to-door service"],
+    ["i-wifi","Fast onboard WiFi"],
+    ["i-card","Card payments accepted"],
+    ["i-snow","Entertainment & climate control"],
+    ["i-tag","Fixed price, no surge, no hidden fees"],
   ],
 }));
 pages.push(servicePage({
@@ -457,11 +472,20 @@ pages.push(servicePage({
   title: "Soho Farmhouse to Heathrow Transfer | Minibus Taxi Service",
   heading: "Soho Farmhouse to Heathrow, <em>fixed £350.</em>",
   icon: "i-pin",
-  lead: "Executive transfers to and from Soho Farmhouse — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.",
+  lead: "An executive door-to-door taxi service to get you to the airport from Soho Farmhouse with comfort and ease — a fixed £350 to London Heathrow, or a confirmed fixed price to any other airport.",
   showFaresNote: true,
   paras: [
-    "We run reliable, comfortable Mercedes transfers to and from Soho Farmhouse for members and guests connecting through the airport.",
-    "Choose the E-Class or S-Class saloon, or the 8-seat V-Class for groups travelling together with luggage. Fixed price, quoted upfront, 24 hours a day.",
+    "Soho Farmhouse is one of the Cotswolds' most sought-after destinations, and getting to the airport should be just as effortless as the stay. We run reliable, pre-booked Mercedes transfers for members and guests connecting through the airport, ready exactly when you need them.",
+    "Choose a Mercedes E-Class or S-Class saloon for individuals and couples, or the executive 8-seat V-Class minibus for groups travelling together with luggage. Every vehicle has a spacious interior with the latest electronics and GPS tracking so we route around traffic and keep to time.",
+    "Every driver is DBS-checked, licensed and knows the local roads, and we're happy to accommodate passengers with reduced mobility. Fixed price, quoted upfront, 24 hours a day, door to door — no surge pricing and no hidden fees.",
+  ],
+  includes: [
+    ["i-shield","DBS-checked, licensed drivers"],
+    ["i-pin","Door-to-door service"],
+    ["i-wifi","Fast onboard WiFi"],
+    ["i-card","Card payments accepted"],
+    ["i-snow","Entertainment & climate control"],
+    ["i-tag","Fixed price, no surge, no hidden fees"],
   ],
 }));
 
