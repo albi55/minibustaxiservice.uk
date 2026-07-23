@@ -539,15 +539,23 @@ address{font-style:normal; line-height:1.8}
   .nav-menu__cols{grid-template-columns:1fr}
   .nav-menu a{white-space:normal; padding-block:.7rem}
   body{padding-bottom:56px}
-  .hero__in{padding-block:8rem 3rem}
-  /* Mobile: no scroll-scrubbing (unreliable + heavy). Static poster, panel always visible. */
+  .hero__in{padding-block:7rem 2.5rem}
+  /* Mobile: no scroll-scrubbing. The film simply autoplays once on load,
+     and the copy is always visible. */
   .hero-stage{height:auto}
-  .hero-sticky{position:relative; height:auto; min-height:88svh}
-  .hero-stage.film-on .hero__video{display:none}
-  .hero-stage.film-on .hero__fallback{display:block}
+  .hero-sticky{position:relative; height:auto; min-height:86svh}
+  .hero__video{display:block}
+  .hero__fallback{display:none}
+  .hero-stage.film-on .hero__video{display:block}
+  .hero-stage.film-on .hero__fallback{display:none}
   .hero-stage.film-on .hero__panel{opacity:1; transform:none}
-  .hero__panel{max-width:none}
+  .hero__panel{max-width:none; opacity:1 !important; transform:none !important}
   .hero__cue{display:none}
+  /* Tighter hero copy on small screens */
+  .hide-sm{display:none}
+  .hero__title{font-size:clamp(2rem,8.5vw,2.9rem); max-width:15ch}
+  .hero__lead{font-size:.98rem; line-height:1.6; margin-top:var(--space-2); max-width:34ch}
+  .hero__actions{margin-top:var(--space-3)}
   /* Fleet: no pinning on mobile — stack film above its spec panel, arrows drive it */
   .fleet-stage{height:auto}
   .fleet-pin{position:relative; height:auto; min-height:0; padding-block:clamp(3rem,8vw,4.5rem)}
@@ -680,11 +688,11 @@ address{font-style:normal; line-height:1.8}
 
     <div class="wrap hero__in">
       <div class="hero__panel">
-        <p class="eyebrow" style="color:var(--gold-soft)">Chipping Norton &middot; Oxford &middot; The Cotswolds</p>
+        <p class="eyebrow" style="color:var(--gold-soft)"><span class="hide-sm">Chipping Norton &middot; Oxford &middot; </span>The Cotswolds</p>
         <h1 class="hero__title">Executive airport transfers, <em>priced before you travel.</em></h1>
         <p class="hero__lead">
-          Mercedes E-Class, S-Class and 8-seat V-Class, driven by DBS-checked local chauffeurs.
-          Fixed fares to every major South-East and Midlands airport &mdash; no meters, no surge, no surprises.
+          Fixed fares to every major airport<span class="hide-sm"> in the South-East and Midlands</span> &mdash; no meters, no surge, no surprises.<span class="hide-sm">
+          Mercedes E-Class, S-Class and 8-seat V-Class, driven by DBS-checked local chauffeurs.</span>
         </p>
         <div class="hero__actions">
           <a class="btn btn--gold" href="#fares">
@@ -1129,7 +1137,33 @@ address{font-style:normal; line-height:1.8}
     var okMotion = !matchMedia("(prefers-reduced-motion: reduce)").matches;
     var okData   = !(navigator.connection && (navigator.connection.saveData ||
                     /2g/.test(navigator.connection.effectiveType || "")));
-    if(!(okWidth && okMotion && okData)) return;
+
+    /* Mobile: scroll-scrubbing is unreliable on touch, so the film simply
+       plays itself once when the hero comes into view. */
+    if(!okWidth){
+      if(!(okMotion && okData)) return;   // reduced-motion / data-saver keeps the poster
+      stage.classList.add("film-on");
+      film.muted = true;
+      film.setAttribute("playsinline", "");
+      var played = false;
+      function playOnce(){
+        if(played) return;
+        played = true;
+        try { film.currentTime = 0; } catch(e){}
+        var p = film.play();
+        if(p && p.catch) p.catch(function(){ /* autoplay blocked: poster remains */ });
+      }
+      if("IntersectionObserver" in window){
+        new IntersectionObserver(function(es, obs){
+          es.forEach(function(e){ if(e.isIntersecting){ playOnce(); obs.disconnect(); } });
+        },{threshold:.25}).observe(stage);
+      } else {
+        playOnce();
+      }
+      return;
+    }
+
+    if(!(okMotion && okData)) return;
 
     var target = 0, current = 0, dur = 0, raf = null, ready = false;
 
